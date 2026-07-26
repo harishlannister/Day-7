@@ -1,0 +1,42 @@
+class ATM {
+    String name;
+    int balance;
+
+    // Constructor
+    ATM(String name, int balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    // Deposit Method
+    void deposit(int amount) {
+        balance = balance + amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    // Withdraw Method
+    void withdraw(int amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+    }
+
+    // Display Method
+    void display() {
+        System.out.println("Account Holder: " + name);
+        System.out.println("Balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+        // Object Creation (STD)
+        ATM obj = new ATM("Aaru", 5000);
+
+        obj.display();
+        obj.deposit(2000);
+        obj.withdraw(1500);
+        obj.display();
+    }
+}
